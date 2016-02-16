@@ -1,5 +1,4 @@
-package com.company;
-
+package part1;
 
 public final class rovar
 {
