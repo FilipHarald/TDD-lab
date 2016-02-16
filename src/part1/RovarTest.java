@@ -55,25 +55,13 @@ public class RovarTest {
 
     @Test
     public void testDerovCorrectLowerCase() throws Exception {
-    	String s = Rovar.derov("rorovovarorsospoprorakoketot");
-    	assertEquals("rovarspraket", s);
+    	String s = Rovar.derov("abobcocdodefofgoghohijojkoklolmomnonopopqoqrorsostotuvovwowxoxyzozåäö1234567890");
+    	assertEquals("abcdefghijklmnopqrstuvwxyzåäö1234567890", s);
     }
     
     @Test
     public void testDerovCorrectUpperCase() throws Exception {
-    	String s = Rovar.derov("ROROVOVARORSOSPOPRORAKOKETOT");
-    	assertEquals("ROVARSPRAKET", s);
-    }
-    
-    @Test
-    public void testDerovNumbers() throws Exception {
-    	String s = Rovar.derov("123");
-    	assertEquals("123", s);
-    }
-    
-    @Test
-    public void testDerovOtherChars() throws Exception {
-    	String s = Rovar.derov("!=&");
-    	assertEquals("!=&", s);
+    	String s = Rovar.derov("ABOBCOCDODEFOFGOGHOHIJOJKOKLOLMOMNqONOPOPQOQRORSOSTOTUVOVWOWXOXYZOZÅÄÖ1234567890");
+    	assertEquals("ABCDEFGHIJKLMNOPQRSTUVWXYZÅÄÖ1234567890", s);
     }
 }
