@@ -12,16 +12,33 @@ public class RovarTest {
     @Test
     public void testEnrovNull() throws Exception {
 
+        String s = Rovar.enrov(null);
+        assertNull(s);
+
     }
 
     @Test
     public void testEnrovEmpty() throws Exception {
 
+        String s = Rovar.enrov("");
+        assertEquals(s, "");
+
     }
 
     @Test
-    public void testEnrovCorrect() throws Exception {
+    public void testEnrovCorrectLower() throws Exception {
 
+        String s;
+
+        s = Rovar.enrov("abcdefghijklmnopqrstuvwxyzåäö1234567890!");
+        assertEquals("abobcocdodefofgoghohijojkoklolmomnonopopqoqrorsostotuvovwowxoxyzozåäö1234567890!", s);
+
+    }
+
+    @Test
+    public void testEnrovCorrectUpper() throws Exception {
+        String s = Rovar.enrov("ABCDEFGHIJKLMNOPQRSTUVWXYZÅÄÖ1234567890!");
+        assertEquals("ABOBCOCDODEFOFGOGHOHIJOJKOKLOLMOMNqONOPOPQOQRORSOSTOTUVOVWOWXOXYZOZÅÄÖ1234567890!", s);
     }
 
     @Test
