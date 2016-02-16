@@ -1,6 +1,6 @@
 package part1;
 
-public final class rovar
+public final class Rovar
 {
 
     private static String lower_consonants = "bcdfhjklmnpqrstvwxz";
