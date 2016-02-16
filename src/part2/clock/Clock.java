@@ -2,6 +2,9 @@ package part2.clock;
 
 public class Clock {
 
+    private Date theDate;
+    private Time theTime;
+
     public String changeMode() {
         return null;
     }
