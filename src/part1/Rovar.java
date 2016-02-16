@@ -3,8 +3,8 @@ package part1;
 public final class Rovar
 {
 
-    private static String lower_consonants = "bcdfhjklmnpqrstvwxz";
-    private static String upper_consonants = "BCFGHJKLMNPQRSTVWXZ";
+    private static String lower_consonants = "bcdfghjklmnpqrstvwxz";
+    private static String upper_consonants = "BCDFGHJKLMNPQRSTVWXZ";
 
     /// <summary>
     /// Encode the string in rovarspraket.

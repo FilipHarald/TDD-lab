@@ -38,7 +38,7 @@ public class RovarTest {
     @Test
     public void testEnrovCorrectUpper() throws Exception {
         String s = Rovar.enrov("ABCDEFGHIJKLMNOPQRSTUVWXYZÅÄÖ1234567890!");
-        assertEquals("ABOBCOCDODEFOFGOGHOHIJOJKOKLOLMOMNqONOPOPQOQRORSOSTOTUVOVWOWXOXYZOZÅÄÖ1234567890!", s);
+        assertEquals("ABOBCOCDODEFOFGOGHOHIJOJKOKLOLMOMNONOPOPQOQRORSOSTOTUVOVWOWXOXYZOZÅÄÖ1234567890!", s);
     }
 
     @Test
@@ -61,7 +61,7 @@ public class RovarTest {
     
     @Test
     public void testDerovCorrectUpperCase() throws Exception {
-    	String s = Rovar.derov("ABOBCOCDODEFOFGOGHOHIJOJKOKLOLMOMNqONOPOPQOQRORSOSTOTUVOVWOWXOXYZOZÅÄÖ1234567890");
+    	String s = Rovar.derov("ABOBCOCDODEFOFGOGHOHIJOJKOKLOLMOMNONOPOPQOQRORSOSTOTUVOVWOWXOXYZOZÅÄÖ1234567890");
     	assertEquals("ABCDEFGHIJKLMNOPQRSTUVWXYZÅÄÖ1234567890", s);
     }
 }
