@@ -9,6 +9,11 @@ import static org.junit.Assert.*;
  */
 public class ClockTestDateAndTime {
 
+    /**
+     *
+     * Time tests
+     *
+     */
 
     @Test
     public void testTimeSecondLowerBorder() throws Exception {
@@ -39,6 +44,17 @@ public class ClockTestDateAndTime {
     public void testTimeHourUpperBorder() throws Exception {
 
     }
+
+    @Test
+    public void testTimeDefault() throws Exception {
+
+    }
+
+    /**
+     *
+     * Date tests
+     *
+     */
 
 
     @Test
@@ -74,7 +90,7 @@ public class ClockTestDateAndTime {
 
 
     @Test
-    public void testSet() throws Exception {
+    public void testDateDefault() throws Exception {
 
     }
 }

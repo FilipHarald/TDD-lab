@@ -39,15 +39,6 @@ public class ClockTestStateTransitions {
 
     }
 
-    @Test
-    public void testTimeSecondLowerBorder() throws Exception {
-
-    }
-
-    @Test
-    public void testTimeSecondUpperBorder() throws Exception {
-
-    }
 
 
 
