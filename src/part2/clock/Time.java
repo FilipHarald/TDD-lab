@@ -30,7 +30,7 @@ public class Time {
 	}
 	
 	private boolean validInput(int hour, int minute, int second) {
-		if(hour >= 0 && hour <= 59 || minute >= 0 && minute <= 59 || minute >= 0 && minute <= 59){
+		if(hour >= 0 && hour <= 59 && minute >= 0 && minute <= 59 && minute >= 0 && minute <= 59){
 			return true;
 		}
 		return false;

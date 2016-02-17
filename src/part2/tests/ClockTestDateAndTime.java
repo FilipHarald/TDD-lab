@@ -35,80 +35,56 @@ public class ClockTestDateAndTime {
 
     @Test
     public void testTimeSecondLowerBorder() throws Exception {
-    	clock.Set(12, 12, -1);
     	clock.changeMode();
-    	assertEquals(defaultTime, clock.changeMode());
-    	clock.Set(12, 12, 0);
-    	clock.changeMode();
-    	assertEquals("00:00:00", clock.changeMode());
-    	clock.Set(12, 12, 1);
-    	clock.changeMode();
-    	assertEquals("00:00:01", clock.changeMode());
+    	clock.Reset();
+    	assertEquals(defaultTime, clock.Set(12, 12, -1));
+    	assertEquals("12:12:00", clock.Set(12, 12, 0));
+    	assertEquals("12:12:01", clock.Set(12, 12, 1));
     }
 
     @Test
     public void testTimeSecondUpperBorder() throws Exception {
-    	clock.Set(12, 12, 58);
     	clock.changeMode();
-    	assertEquals("00:00:58", clock.changeMode());
-    	clock.Set(12, 12, 59);
-    	clock.changeMode();
-    	assertEquals("00:00:59", clock.changeMode());
-    	clock.Set(12, 12, 60);
-    	clock.changeMode();
-    	assertEquals(defaultTime, clock.changeMode());
+    	clock.Reset();
+    	assertEquals("12:12:58", clock.Set(12, 12, 58));
+    	assertEquals("12:12:59", clock.Set(12, 12, 59));
+    	assertEquals(defaultTime, clock.Set(12, 12, 60));
     }
 
     @Test
     public void testTimeMinuteLowerBorder() throws Exception {
-    	clock.Set(12, -1, 12);
     	clock.changeMode();
-    	assertEquals(defaultTime, clock.changeMode());
-    	clock.Set(12, 0, 12);
-    	clock.changeMode();
-    	assertEquals("00:00:00", clock.changeMode());
-    	clock.Set(12, 1, 12);
-    	clock.changeMode();
-    	assertEquals("00:01:00", clock.changeMode());
+    	clock.Reset();
+    	assertEquals(defaultTime, clock.Set(12, -1, 12));
+    	assertEquals("12:00:12", clock.Set(12, 0, 12));
+    	assertEquals("12:01:12", clock.Set(12, 1, 12));
     }
 
     @Test
     public void testTimeMinuteUpperBorder() throws Exception {
-    	clock.Set(12, 58, 12);
     	clock.changeMode();
-    	assertEquals("00:00:58", clock.changeMode());
-    	clock.Set(12, 59, 12);
-    	clock.changeMode();
-    	assertEquals("00:00:59", clock.changeMode());
-    	clock.Set(12, 60, 12);
-    	clock.changeMode();
-    	assertEquals(defaultTime, clock.changeMode());
+    	clock.Reset();
+    	assertEquals("12:12:58", clock.Set(12, 58, 12));
+    	assertEquals("12:12:59", clock.Set(12, 59, 12));
+    	assertEquals(defaultTime, clock.Set(12, 60, 12));
     }
 
     @Test
     public void testTimeHourLowerBorder() throws Exception {
-    	clock.Set(-1, 12, 12);
     	clock.changeMode();
-    	assertEquals(defaultTime, clock.changeMode());
-    	clock.Set(0, 12, 12);
-    	clock.changeMode();
-    	assertEquals("00:00:00", clock.changeMode());
-    	clock.Set(1, 12, 12);
-    	clock.changeMode();
-    	assertEquals("01:00:00", clock.changeMode());
+    	clock.Reset();
+    	assertEquals(defaultTime, clock.Set(-1, 12, 12));
+    	assertEquals("00:12:12", clock.Set(0, 12, 12));
+    	assertEquals("01:12:12", clock.Set(1, 12, 12));
     }
 
     @Test
     public void testTimeHourUpperBorder() throws Exception {
-    	clock.Set(58, 12, 12);
     	clock.changeMode();
-    	assertEquals("58:00:00", clock.changeMode());
-    	clock.Set(59, 12, 12);
-    	clock.changeMode();
-    	assertEquals("59:00:00", clock.changeMode());
-    	clock.Set(60, 12, 12);
-    	clock.changeMode();
-    	assertEquals(defaultTime, clock.changeMode());
+    	clock.Reset();
+    	assertEquals("58:12:12", clock.Set(58, 12, 12));
+    	assertEquals("59:12:12", clock.Set(59, 12, 12));
+    	assertEquals(defaultTime, clock.Set(60, 12, 12));
     }
 
 
