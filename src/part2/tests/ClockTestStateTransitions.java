@@ -1,5 +1,6 @@
 package part2.tests;
 
+import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 import part2.clock.Clock;
@@ -85,6 +86,11 @@ public class ClockTestStateTransitions {
 
         assertNotNull(newTime);
         assertEquals("12:12:12", newTime);
+    }
+
+    @After
+    public void tearDown() {
+        clock = null;
     }
 
 }
