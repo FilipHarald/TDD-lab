@@ -26,7 +26,7 @@ public class Time {
 	}
 		
 	public String showTime(){
-		return "" + hour + ":" + minute + ":" + second;
+		return "" + String.format("%02d", hour) + ":" + String.format("%02d", minute) + ":" + String.format("%02d", second);
 	}
 	
 	private boolean validInput(int hour, int minute, int second) {
