@@ -24,6 +24,10 @@ public class Time {
 		}
 		return showTime();
 	}
+		
+	public String showTime(){
+		return "" + hour + ":" + minute + ":" + second;
+	}
 	
 	private boolean validInput(int hour, int minute, int second) {
 		if(hour >= 0 && hour <= 59 || minute >= 0 && minute <= 59 || minute >= 0 && minute <= 59){
@@ -31,9 +35,4 @@ public class Time {
 		}
 		return false;
 	}
-	
-	public String showTime(){
-		return "" + hour + ":" + minute + ":" + second;
-	}
-	
 }

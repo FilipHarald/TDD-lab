@@ -6,9 +6,9 @@ public class Date {
 	private int day;
 	
 	public Date(){
-		year = 0;
-		month = 0;
-		day = 0;
+		year = 2000;
+		month = 1;
+		day = 1;
 	}
 	
 	public Date(int year, int month, int day) {
@@ -24,14 +24,14 @@ public class Date {
 		return showDate();
 	}
 	
+	public String showDate(){
+		return "" + year + "-" + month + "-" + day;
+	}
+	
 	private boolean validInput(int year, int month, int day) {
 		if(year >= 2000 && year <= 2100 || month >= 1 && month <= 12 || day >= 1 && day <= 31){
 			return true;
 		}
 		return false;
-	}
-	
-	public String showDate(){
-		return "" + year + "-" + month + "-" + day;
 	}
 }
