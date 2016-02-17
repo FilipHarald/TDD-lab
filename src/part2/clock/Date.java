@@ -29,7 +29,7 @@ public class Date {
 	}
 	
 	private boolean validInput(int year, int month, int day) {
-		if(year >= 2000 && year <= 2100 || month >= 1 && month <= 12 || day >= 1 && day <= 31){
+		if(year >= 2000 && year <= 2100 && month >= 1 && month <= 12 && day >= 1 && day <= 31){
 			return true;
 		}
 		return false;

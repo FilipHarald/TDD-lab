@@ -96,85 +96,82 @@ public class ClockTestDateAndTime {
 
     @Test
     public void testDateDefault() throws Exception {
-    	assertEquals("2000-January-1", defaultDate);
+        // Change from Time to Date
+        clock.changeMode();
+
+    	assertEquals("2000-01-01", defaultDate);
     }
 
     @Test
     public void testDateYearLowerBorder() throws Exception {
     	clock.changeMode();
-    	clock.Set(1999, 6, 15);
-    	assertEquals(defaultDate, clock.changeMode());
-    	clock.Set(2000, 6, 15);
-    	clock.changeMode();
-    	assertEquals("2000-06-15", clock.changeMode());
-    	clock.Set(2001, 6, 15);
-    	clock.changeMode();
-    	assertEquals("2001-06-15", clock.changeMode());
+        clock.Reset();
+    	String newDate = clock.Set(1999, 6, 15);
+    	assertEquals(defaultDate, newDate);
+        newDate = clock.Set(2000, 6, 15);
+    	assertEquals("2000-06-15", newDate);
+        newDate = clock.Set(2001, 6, 15);
+    	assertEquals("2001-06-15", newDate);
     }
 
     @Test
     public void testDateYearUpperBorder() throws Exception {
     	clock.changeMode();
-    	clock.Set(2099, 6, 15);
-    	assertEquals("2099-06-15", clock.changeMode());
-    	clock.Set(2100, 6, 15);
-    	clock.changeMode();
-    	assertEquals("2100-06-15", clock.changeMode());
-    	clock.Set(2101, 6, 15);
-    	clock.changeMode();
-    	assertEquals(defaultDate, clock.changeMode());
+        clock.Reset();
+    	String newDate = clock.Set(2099, 6, 15);
+    	assertEquals("2099-06-15", newDate);
+        newDate = clock.Set(2100, 6, 15);
+    	assertEquals("2100-06-15", newDate);
+        newDate = clock.Set(2101, 6, 15);
+    	assertEquals("2100-06-15", newDate);
     }
 
     @Test
     public void testDateMonthLowerBorder() throws Exception {
     	clock.changeMode();
-    	clock.Set(2050, -1, 15);
-    	assertEquals(defaultDate, clock.changeMode());
-    	clock.Set(2050, 0, 15);
-    	clock.changeMode();
-    	assertEquals("2000-00-15", clock.changeMode());
-    	clock.Set(2050, 1, 15);
-    	clock.changeMode();
-    	assertEquals("2001-01-15", clock.changeMode());
+        clock.Reset();
+    	String newDate = clock.Set(2050, 0, 15);
+    	assertEquals(defaultDate, newDate);
+        newDate = clock.Set(2050, 1, 15);
+    	assertEquals("2050-01-15", newDate);
+        newDate = clock.Set(2050, 2, 15);
+    	assertEquals("2050-02-15", newDate);
     }
 
     @Test
     public void testDateMonthUpperBorder() throws Exception {
     	clock.changeMode();
-    	clock.Set(2050, 11, 15);
-    	assertEquals("2099-11-15", clock.changeMode());
-    	clock.Set(2050, 10, 15);
-    	clock.changeMode();
-    	assertEquals("2100-12-15", clock.changeMode());
-    	clock.Set(2050, 13, 15);
-    	clock.changeMode();
-    	assertEquals(defaultDate, clock.changeMode());
+        clock.Reset();
+    	String newDate = clock.Set(2050, 11, 15);
+    	assertEquals("2050-11-15", newDate);
+        newDate = clock.Set(2050, 12, 15);
+    	assertEquals("2050-12-15", newDate);
+        newDate = clock.Set(2050, 13, 15);
+    	assertEquals("2050-12-15", newDate);
     }
 
     @Test
     public void testDateDayLowerBorder() throws Exception {
     	clock.changeMode();
-    	clock.Set(2050, 6, -1);
-    	assertEquals(defaultDate, clock.changeMode());
-    	clock.Set(2050, 6, 0);
-    	clock.changeMode();
-    	assertEquals("2000-06-00", clock.changeMode());
-    	clock.Set(2050, 6, 1);
-    	clock.changeMode();
-    	assertEquals("2001-06-01", clock.changeMode());
+        clock.Reset();
+    	String newDate = clock.Set(2050, 6, 0);
+    	assertEquals(defaultDate, newDate);
+    	newDate = clock.Set(2050, 6, 1);
+    	assertEquals("2050-06-01", newDate);
+    	newDate = clock.Set(2050, 6, 2);
+    	assertEquals("2050-06-02", newDate);
     }
 
     @Test
     public void testDateDayUpperBorder() throws Exception {
     	clock.changeMode();
-    	clock.Set(2050, 6, 30);
-    	assertEquals("2099-06-30", clock.changeMode());
-    	clock.Set(2050, 6, 31);
-    	clock.changeMode();
-    	assertEquals("2100-06-31", clock.changeMode());
-    	clock.Set(2050, 6, 32);
-    	clock.changeMode();
-    	assertEquals(defaultDate, clock.changeMode());
+        clock.Reset();
+        String newDate = clock.Set(2050, 6, 30);
+    	assertEquals("2050-06-30", newDate);
+        newDate = clock.Set(2050, 6, 31);
+    	assertEquals("2050-06-31", newDate);
+        newDate = clock.Set(2050, 6, 32);
+    	assertEquals("2050-06-31", newDate);
     }
 
 }
