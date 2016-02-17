@@ -11,10 +11,6 @@ public class Date {
 		day = 1;
 	}
 	
-	public Date(int year, int month, int day) {
-		dateSet(year, month, day);
-	}
-	
 	public String dateSet(int year, int month, int day) {
 		if(validInput(year, month, day)){
 			this.year = year;

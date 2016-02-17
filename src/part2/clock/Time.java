@@ -11,11 +11,7 @@ public class Time {
 		minute = 0;
 		second = 0;
 	}
-	
-	public Time(int hour, int minute, int second) {
-		timeSet(hour, minute, second);
-	}
-	
+
 	public String timeSet(int hour, int minute, int second){
 		if(validInput(hour, minute, second)){	
 			this.hour = hour;
