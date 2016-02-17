@@ -35,7 +35,6 @@ public class ClockTestDateAndTime {
 
     @Test
     public void testTimeSecondLowerBorder() throws Exception {
-    	clock.changeMode();
     	clock.Reset();
     	assertEquals(defaultTime, clock.Set(12, 12, -1));
     	assertEquals("12:12:00", clock.Set(12, 12, 0));
@@ -44,16 +43,15 @@ public class ClockTestDateAndTime {
 
     @Test
     public void testTimeSecondUpperBorder() throws Exception {
-    	clock.changeMode();
     	clock.Reset();
     	assertEquals("12:12:58", clock.Set(12, 12, 58));
-    	assertEquals("12:12:59", clock.Set(12, 12, 59));
-    	assertEquals(defaultTime, clock.Set(12, 12, 60));
+    	String time = clock.Set(12, 12, 59); 
+    	assertEquals("12:12:59", time);
+    	assertEquals(time, clock.Set(12, 12, 60));
     }
 
     @Test
     public void testTimeMinuteLowerBorder() throws Exception {
-    	clock.changeMode();
     	clock.Reset();
     	assertEquals(defaultTime, clock.Set(12, -1, 12));
     	assertEquals("12:00:12", clock.Set(12, 0, 12));
@@ -62,16 +60,15 @@ public class ClockTestDateAndTime {
 
     @Test
     public void testTimeMinuteUpperBorder() throws Exception {
-    	clock.changeMode();
     	clock.Reset();
-    	assertEquals("12:12:58", clock.Set(12, 58, 12));
-    	assertEquals("12:12:59", clock.Set(12, 59, 12));
-    	assertEquals(defaultTime, clock.Set(12, 60, 12));
+    	assertEquals("12:58:12", clock.Set(12, 58, 12));
+    	String time = clock.Set(12, 59, 12);
+    	assertEquals("12:59:12", time);
+    	assertEquals(time, clock.Set(12, 60, 12));
     }
 
     @Test
     public void testTimeHourLowerBorder() throws Exception {
-    	clock.changeMode();
     	clock.Reset();
     	assertEquals(defaultTime, clock.Set(-1, 12, 12));
     	assertEquals("00:12:12", clock.Set(0, 12, 12));
@@ -80,11 +77,11 @@ public class ClockTestDateAndTime {
 
     @Test
     public void testTimeHourUpperBorder() throws Exception {
-    	clock.changeMode();
     	clock.Reset();
     	assertEquals("58:12:12", clock.Set(58, 12, 12));
-    	assertEquals("59:12:12", clock.Set(59, 12, 12));
-    	assertEquals(defaultTime, clock.Set(60, 12, 12));
+    	String time = clock.Set(59, 12, 12);
+    	assertEquals("59:12:12", time);
+    	assertEquals(time, clock.Set(60, 12, 12));
     }
 
 
