@@ -48,9 +48,9 @@ public class Clock {
     public String Set(int p1, int p2, int p3) {
 
         if (mode == Mode.DateReset) {
-            curDisplay = theDate.setDate(p1, p2, p3);
+            curDisplay = theDate.dateSet(p1, p2, p3);
         } else if (mode == Mode.TimeReset) {
-            curDisplay = theTime.setTime(p1, p2, p3);
+            curDisplay = theTime.timeSet(p1, p2, p3);
         }
 
         return curDisplay;
