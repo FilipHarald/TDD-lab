@@ -5,7 +5,7 @@ public class Date {
 	private int month;
 	private int day;
 	
-	public Date(){
+	public Date() {
 		year = 2000;
 		month = 1;
 		day = 1;
@@ -15,7 +15,7 @@ public class Date {
 		dateSet(year, month, day);
 	}
 	
-	public String dateSet(int year, int month, int day){
+	public String dateSet(int year, int month, int day) {
 		if(validInput(year, month, day)){
 			this.year = year;
 			this.month = month;
@@ -24,8 +24,8 @@ public class Date {
 		return showDate();
 	}
 	
-	public String showDate(){
-		return "" + year + "-" + month + "-" + day;
+	public String showDate() {
+		return "" + year + "-" + String.format("%02d", month) + "-" + String.format("%02d", day);
 	}
 	
 	private boolean validInput(int year, int month, int day) {
