@@ -20,12 +20,21 @@ public class Clock {
 
     public String changeMode() {
 
-        if (mode == Mode.Date) {
-            mode = Mode.Time;
-            curDisplay = theTime.showTime();
-        } else if (mode == Mode.Time){
-            mode = Mode.Date;
-            curDisplay = theDate.showDate();
+        switch (mode) {
+            case Date:
+                mode = Mode.Time;
+                curDisplay = theTime.showTime();
+                break;
+            case Time:
+                mode = Mode.Date;
+                curDisplay = theDate.showDate();
+                break;
+            case DateReset:
+                // ChangeMode does nothing in DateReset
+                break;
+            case TimeReset:
+                // ChangeMode does nothign in TimeReset
+                break;
         }
 
         return curDisplay;
@@ -34,12 +43,21 @@ public class Clock {
 
     public String Reset() {
 
-        if (mode == Mode.Date) {
-            mode = Mode.DateReset;
-            curDisplay = "Alter Date";
-        } else  if (mode == Mode.Time) {
-            mode = Mode.TimeReset;
-            curDisplay = "Alter Time";
+        switch (mode) {
+            case Date:
+                mode = Mode.DateReset;
+                curDisplay = "Alter Date";
+                break;
+            case Time:
+                mode = Mode.TimeReset;
+                curDisplay = "Alter Time";
+                break;
+            case DateReset:
+                // Reset does nothing if already in DateReset
+                break;
+            case TimeReset:
+                // Reset does nothing if already in TimeReset
+                break;
         }
 
         return curDisplay;
@@ -47,10 +65,19 @@ public class Clock {
 
     public String Set(int p1, int p2, int p3) {
 
-        if (mode == Mode.DateReset) {
-            curDisplay = theDate.dateSet(p1, p2, p3);
-        } else if (mode == Mode.TimeReset) {
-            curDisplay = theTime.timeSet(p1, p2, p3);
+        switch (mode) {
+            case Date:
+                // Set does not work outside of Reset
+                break;
+            case Time:
+                // Set does not work outside of Reset
+                break;
+            case DateReset:
+                curDisplay = theDate.dateSet(p1, p2, p3);
+                break;
+            case TimeReset:
+                curDisplay = theTime.timeSet(p1, p2, p3);
+                break;
         }
 
         return curDisplay;
